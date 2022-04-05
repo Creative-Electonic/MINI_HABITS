@@ -16604,6 +16604,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mini-habits@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "mini-habits@workspace:."
+  dependencies:
+    "@redwoodjs/core": 1.0.0
+  languageName: unknown
+  linkType: soft
+
 "minimalistic-assert@npm:^1.0.0, minimalistic-assert@npm:^1.0.1":
   version: 1.0.1
   resolution: "minimalistic-assert@npm:1.0.1"
@@ -20033,14 +20041,6 @@ __metadata:
   checksum: f6f0df78817e78287c766687aed4d5accbebc308a8e7e673fb085b9977473c1f139f0c5335d353f172a915bb288098430755d2ad3c4f30612f4dd0c901cd2c3a
   languageName: node
   linkType: hard
-
-"root-workspace-0b6124@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "root-workspace-0b6124@workspace:."
-  dependencies:
-    "@redwoodjs/core": 1.0.0
-  languageName: unknown
-  linkType: soft
 
 "run-async@npm:^2.4.0":
   version: 2.4.1
