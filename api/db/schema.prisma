@@ -8,9 +8,18 @@ generator client {
   binaryTargets = "native"
 }
 
-
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+  id String @id @default(uuid())
+  email String?
+  name String @unique
+  habits Habit[]
+}
+
+model Habit {
+  id String @id @default(uuid())
+  name String @unique
+  minimumCompletionRequirement String
+  achieveCount Int
+  user User @relation(fields: [userId], references: [id])
+  userId String
 }
