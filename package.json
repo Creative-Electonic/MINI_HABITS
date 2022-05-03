@@ -9,7 +9,8 @@
     ]
   },
   "devDependencies": {
-    "@redwoodjs/core": "^1.2.1"
+    "@redwoodjs/core": "^1.2.1",
+    "@types/ua-parser-js": "^0.7.36"
   },
   "eslintConfig": {
     "extends": "@redwoodjs/eslint-config",
@@ -25,7 +26,11 @@
   "scripts": {
     "dev": "yarn rw dev",
     "sync": "yarn rw prisma migrate dev",
-    "db": "yarn rw  prisma studio"
+    "db": "yarn rw  prisma studio",
+    "add:web": "yarn workspace web add"
   },
-  "packageManager": "yarn@3.2.0"
+  "packageManager": "yarn@3.2.0",
+  "dependencies": {
+    "ua-parser-js": "^1.0.2"
+  }
 }

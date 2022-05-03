@@ -1,0 +1,35 @@
+@import '~open-color/open-color.scss';
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .mobileImg {
+    width: 375px;
+    height: 667px;
+    border: 3px solid $oc-gray-6;
+    border-radius: 15px;
+  }
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  user-select: none;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  height: 100%;
+  overflow: overlay;
+}
+
+.navBar {
+  height: 70px;
+  width: 100%;
+  border-top: 1px solid $oc-gray-8;
+}
