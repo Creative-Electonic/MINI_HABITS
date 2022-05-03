@@ -13,7 +13,7 @@ import AppLayout from './layouts/AppLayout/AppLayout'
 const Routes = () => {
   return (
     <Router>
-      <Set prerender>
+      <Set>
         <Set wrap={AppLayout}>
           {/* <Route path="/users/new" page={UserNewUserPage} name="newUser" />
           <Route path="/users/{id:Int}/edit" page={UserEditUserPage} name="editUser" />

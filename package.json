@@ -27,7 +27,8 @@
     "dev": "yarn rw dev",
     "sync": "yarn rw prisma migrate dev",
     "db": "yarn rw  prisma studio",
-    "add:web": "yarn workspace web add"
+    "add:web": "yarn workspace web add",
+    "build": "yarn rw build"
   },
   "packageManager": "yarn@3.2.0",
   "dependencies": {
