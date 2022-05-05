@@ -6,7 +6,7 @@ const ListPage = () => {
   return (
     <div className={styles.container}>
       <MetaTags title="List" description="List page" />
-      <h1>List</h1>
+      <h1>Habits List</h1>
       <HabitsCell />
     </div>
   )

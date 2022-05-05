@@ -1,19 +1,20 @@
 // import humanize from 'humanize-string'
 
-// import { useMutation } from '@redwoodjs/web'
-// import { toast } from '@redwoodjs/web/toast'
+import { useMutation } from '@redwoodjs/web'
+import { toast } from '@redwoodjs/web/toast'
 import { Link, routes } from '@redwoodjs/router'
 
-// import { QUERY } from 'src/components/Habit/HabitsCell'
+import { QUERY } from 'src/components/Habit/HabitsCell'
 import styles from './Habits.module.scss'
+import { FindHabits } from 'types/graphql'
 
-// const DELETE_HABIT_MUTATION = gql`
-//   mutation DeleteHabitMutation($id: String!) {
-//     deleteHabit(id: $id) {
-//       id
-//     }
-//   }
-// `
+const ACHIEVE_HABIT_MUTATION = gql`
+  mutation AchieveHabitMutation($id: String!) {
+    achieveHabit(id: $id) {
+      id
+    }
+  }
+`
 
 // const MAX_STRING_LENGTH = 150
 
@@ -54,31 +55,27 @@ import styles from './Habits.module.scss'
 //   return <input type="checkbox" checked={checked} disabled />
 // }
 
-const HabitsList = ({ habits }) => {
-  // const [deleteHabit] = useMutation(DELETE_HABIT_MUTATION, {
-  //   onCompleted: () => {
-  //     toast.success('Habit deleted')
-  //   },
-  //   onError: (error) => {
-  //     toast.error(error.message)
-  //   },
-  //   // This refetches the query on the list page. Read more about other ways to
-  //   // update the cache over here:
-  //   // https://www.apollographql.com/docs/react/data/mutations/#making-all-other-cache-updates
-  //   refetchQueries: [{ query: QUERY }],
-  //   awaitRefetchQueries: true,
-  // })
+const HabitsList = ({ habits }: FindHabits) => {
+  const [achieveTarget] = useMutation(ACHIEVE_HABIT_MUTATION, {
+    onCompleted: () => {
+      toast.success('Habit Achieved')
+    },
+    onError: (error) => {
+      toast.error(error.message)
+    },
+    refetchQueries: [{ query: QUERY }],
+    awaitRefetchQueries: true,
+  })
 
-  // const onDeleteClick = (id) => {
-  //   if (confirm('Are you sure you want to delete habit ' + id + '?')) {
-  //     deleteHabit({ variables: { id } })
-  //   }
-  // }
+  const onAchieveTarget = (id: string) => {
+    console.log(id)
+    achieveTarget({ variables: { id } })
+  }
 
   return (
     <div className={styles.container}>
       {habits.map((habit) => (
-        <>
+        <div className={styles.habitContainer} key={habit.id}>
           <div>
             <span>微习惯名称: </span>
             <span>{habit.name}</span>
@@ -92,12 +89,18 @@ const HabitsList = ({ habits }) => {
             <span>{habit.achieveCount}</span>
           </div>
           <div>
-            <Link
+            <button
+              className="rw-button rw-button-small rw-button-blue"
+              onClick={() => onAchieveTarget(habit.id)}
+            >
+              完成今日目标
+            </button>
+            {/* <Link
               to={routes.habit({ id: habit.id })}
               className="rw-button rw-button-small"
             >
               查看详情
-            </Link>
+            </Link> */}
             {/* <Link
                     to={routes.editHabit({ id: habit.id })}
                     title={'Edit habit ' + habit.id}
@@ -114,7 +117,7 @@ const HabitsList = ({ habits }) => {
                     Delete
                   </button> */}
           </div>
-        </>
+        </div>
       ))}
     </div>
   )

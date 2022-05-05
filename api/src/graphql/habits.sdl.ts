@@ -31,5 +31,6 @@ export const schema = gql`
     createHabit(input: CreateHabitInput!): Habit! @requireAuth
     updateHabit(id: String!, input: UpdateHabitInput!): Habit! @requireAuth
     deleteHabit(id: String!): Habit! @requireAuth
+    achieveHabit(id: String): Habit! @requireAuth
   }
 `

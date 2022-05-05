@@ -37,6 +37,22 @@ export const deleteHabit: MutationResolvers['deleteHabit'] = ({ id }) => {
   })
 }
 
+export const achieveHabit: MutationResolvers['achieveHabit'] = async ({
+  id,
+}) => {
+  const targetHabit = await db.habit.findUnique({
+    where: { id },
+  })
+
+  return db.habit.update({
+    data: {
+      ...targetHabit,
+      achieveCount: targetHabit.achieveCount + 1,
+    },
+    where: { id },
+  })
+}
+
 export const Habit: HabitResolvers = {
   user: (_obj, { root }) =>
     db.habit.findUnique({ where: { id: root.id } }).user(),
