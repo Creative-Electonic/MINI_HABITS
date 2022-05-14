@@ -7,6 +7,8 @@ import { Link, routes } from '@redwoodjs/router'
 import { QUERY } from 'src/components/Habit/HabitsCell'
 import styles from './Habits.module.scss'
 import { FindHabits } from 'types/graphql'
+import { Button, Toast } from 'antd-mobile'
+import { useState } from 'react'
 
 const ACHIEVE_HABIT_MUTATION = gql`
   mutation AchieveHabitMutation($id: String!) {
@@ -56,52 +58,73 @@ const ACHIEVE_HABIT_MUTATION = gql`
 // }
 
 const HabitsList = ({ habits }: FindHabits) => {
+  const [achieveLoading, setAchieveLoading] = useState(false)
   const [achieveTarget] = useMutation(ACHIEVE_HABIT_MUTATION, {
     onCompleted: () => {
-      toast.success('Habit Achieved')
+      setAchieveLoading(false)
+
+      Toast.show({
+        icon: 'success',
+        content: '微习惯打卡成功',
+      })
     },
     onError: (error) => {
-      toast.error(error.message)
+      setAchieveLoading(false)
+
+      Toast.show({
+        icon: 'fail',
+        content: error.message,
+      })
     },
     refetchQueries: [{ query: QUERY }],
     awaitRefetchQueries: true,
   })
 
   const onAchieveTarget = (id: string) => {
-    console.log(id)
+    setAchieveLoading(true)
+
     achieveTarget({ variables: { id } })
   }
 
   return (
     <div className={styles.container}>
-      {habits.map((habit) => (
-        <div className={styles.habitContainer} key={habit.id}>
-          <div>
-            <span>微习惯名称: </span>
-            <span>{habit.name}</span>
-          </div>
-          <div>
-            <span>最小完成标准: </span>
-            <span>{habit.minimumCompletionRequirement}</span>
-          </div>
-          <div>
-            <span>已完成次数: </span>
-            <span>{habit.achieveCount}</span>
-          </div>
-          <div>
-            <button
-              className="rw-button rw-button-small rw-button-blue"
-              onClick={() => onAchieveTarget(habit.id)}
-            >
-              完成今日目标
-            </button>
-            {/* <Link
-              to={routes.habit({ id: habit.id })}
-              className="rw-button rw-button-small"
-            >
-              查看详情
-            </Link> */}
-            {/* <Link
+      {/* title */}
+      <span className={styles.title}>Today&apos;s Tasks</span>
+      {/* list */}
+      <div className={styles.list}>
+        {habits.map((habit) => (
+          <div className={styles.habitContainer} key={habit.id}>
+            <div className={styles.description}>
+              <span className={styles.label}>微习惯名称: </span>
+              <span>{habit.name}</span>
+            </div>
+            <div className={styles.description}>
+              <span className={styles.label}>最小完成标准: </span>
+              <span>{habit.minimumCompletionRequirement}</span>
+            </div>
+            <div className={styles.description}>
+              <span className={styles.label}>已完成次数: </span>
+              <span className={styles.label}>{habit.achieveCount}</span>
+            </div>
+            <div className={styles.actions}>
+              <Button
+                block
+                shape="rounded"
+                size="mini"
+                color="primary"
+                onClick={() => onAchieveTarget(habit.id)}
+                loading={achieveLoading}
+                disabled={habit.isCompletedToday}
+              >
+                {habit.isCompletedToday ? '今日已完成' : '完成今日目标'}
+              </Button>
+
+              <Link to={routes.habit({ id: habit.id })}>
+                <Button block shape="rounded" size="mini">
+                  查看详情
+                </Button>
+              </Link>
+              {/* <Link
                     to={routes.editHabit({ id: habit.id })}
                     title={'Edit habit ' + habit.id}
                     className="rw-button rw-button-small rw-button-blue"
@@ -116,9 +139,10 @@ const HabitsList = ({ habits }: FindHabits) => {
                   >
                     Delete
                   </button> */}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   )
 }

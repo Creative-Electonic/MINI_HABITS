@@ -1,3 +1,25 @@
 .container {
   padding: 10px;
 }
+
+.welcome {
+  font-size: 30px;
+    font-weight: 600;
+    line-height: 60px;
+}
+
+.goal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 10px 0;
+  height: 150px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #ebe9e9;
+}
+
+.icon {
+  font-size: 25px;
+  font-weight: 500;
+}

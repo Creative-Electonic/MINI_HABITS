@@ -6,11 +6,13 @@ export const schema = gql`
     achieveCount: Int!
     user: User!
     userId: String!
+    isCompletedToday: Boolean
   }
 
   type Query {
     habits: [Habit!]! @requireAuth
     habit(id: String!): Habit @requireAuth
+    todayHabits: [Habit!]! @requireAuth
   }
 
   input CreateHabitInput {

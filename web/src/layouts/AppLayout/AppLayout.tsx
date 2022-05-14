@@ -9,7 +9,6 @@ const AppLayout = ({ children }: AppLayoutProps) => {
   const appLayout = (
     <div className={styles.app}>
       <div className={styles.content}>{children}</div>
-      <div className={styles.navBar}></div>
     </div>
   )
 

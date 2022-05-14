@@ -1,9 +1,30 @@
+import dayjs from 'dayjs'
 import { db } from 'src/lib/db'
+import { logger } from 'src/lib/logger'
 import type {
   QueryResolvers,
   MutationResolvers,
   HabitResolvers,
 } from 'types/graphql'
+
+export const todayHabits: QueryResolvers['todayHabits'] = async () => {
+  const result = await db.habit.findMany({
+    where: {
+      // user
+    },
+    orderBy: {
+      updatedAt: 'asc',
+    },
+  })
+
+  return result.map((habit) => {
+    return {
+      ...habit,
+      isCompletedToday:
+        habit.updatedAt.getTime() >= dayjs().startOf('day').toDate().getTime(),
+    }
+  })
+}
 
 export const habits: QueryResolvers['habits'] = () => {
   return db.habit.findMany()
@@ -46,7 +67,6 @@ export const achieveHabit: MutationResolvers['achieveHabit'] = async ({
 
   return db.habit.update({
     data: {
-      ...targetHabit,
       achieveCount: targetHabit.achieveCount + 1,
     },
     where: { id },
