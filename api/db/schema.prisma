@@ -13,6 +13,7 @@ model User {
   email String?
   name String @unique
   habits Habit[]
+  habitAchieveLogs HabitAchieveLog[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt @default(now())
@@ -26,7 +27,18 @@ model Habit {
   achieveCount Int
   user User @relation(fields: [userId], references: [id])
   userId String
+  habitAchieveLogs HabitAchieveLog[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt @default(now())
+}
+
+model HabitAchieveLog {
+  id String @id @default(uuid())
+  habit Habit @relation(fields: [habitId], references: [id])
+  habitId String
+  user User @relation(fields: [userId], references: [id])
+  userId String
+
+  createdAt DateTime @default(now())
 }

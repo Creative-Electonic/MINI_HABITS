@@ -69,6 +69,13 @@ export const achieveHabit: MutationResolvers['achieveHabit'] = async ({
     where: { id },
   })
 
+  await db.habitAchieveLog.create({
+    data: {
+      habitId: id,
+      userId: '1',
+    },
+  })
+
   return db.habit.update({
     data: {
       achieveCount: targetHabit.achieveCount + 1,
