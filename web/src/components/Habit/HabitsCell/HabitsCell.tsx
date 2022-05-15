@@ -2,6 +2,8 @@ import type { FindTodayHabits } from 'types/graphql'
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
 import Habits from 'src/components/Habit/Habits'
+import styles from './HabitsCell.module.scss'
+import { SpinLoading } from 'antd-mobile'
 
 export const QUERY = gql`
   query FindTodayHabits {
@@ -16,16 +18,40 @@ export const QUERY = gql`
   }
 `
 
-export const Loading = () => <div>Loading...</div>
+const Layout = ({ children }: { children?: React.ReactNode }) => {
+  return (
+    <>
+      {/* title */}
+      <div className={styles.title}>Today&apos;s Tasks</div>
 
-export const Empty = () => {
-  return <div className="rw-text-center">empty</div>
+      {children}
+    </>
+  )
 }
 
-export const Failure = ({ error }: CellFailureProps) => (
-  <div className="rw-cell-error">{error.message}</div>
+export const Loading = () => (
+  <Layout>
+    <div className={styles.loadingContainer}>
+      <SpinLoading />
+      <span>Loading</span>
+    </div>
+  </Layout>
 )
 
-export const Success = ({ todayHabits }: CellSuccessProps<FindTodayHabits>) => {
-  return <Habits habits={todayHabits} />
-}
+export const Empty = () => (
+  <Layout>
+    <span>没有已创建的任务</span>
+  </Layout>
+)
+
+export const Failure = ({ error }: CellFailureProps) => (
+  <Layout>
+    <span>{error.message}</span>
+  </Layout>
+)
+
+export const Success = ({ todayHabits }: CellSuccessProps<FindTodayHabits>) => (
+  <Layout>
+    <Habits todayHabits={todayHabits} />
+  </Layout>
+)

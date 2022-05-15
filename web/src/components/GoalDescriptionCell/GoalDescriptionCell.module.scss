@@ -1,0 +1,36 @@
+@import '~open-color/open-color.scss';
+
+.container {
+  display: flex;
+  align-items: center;
+height: 100%;
+padding: 0 10px;
+}
+
+.progressCircle {
+  margin-left: 15px;
+  margin-right: 15px;
+
+}
+
+.progressText {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+}
+
+.description {
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.textCount {
+  color: $oc-gray-6;
+}
