@@ -1,6 +1,6 @@
-import { Link, routes } from '@redwoodjs/router'
+import { Link, navigate, routes } from '@redwoodjs/router'
 import { useMutation } from '@redwoodjs/web'
-import { Toast, Button } from 'antd-mobile'
+import { Toast, Button, ProgressBar } from 'antd-mobile'
 import { useState } from 'react'
 import { QUERY } from 'src/components/Habit/HabitsCell'
 import { HabitItem } from '../../Habits'
@@ -43,40 +43,70 @@ const HabitListItem = ({ habit }: { habit: HabitItem }) => {
     achieveTarget({ variables: { id } })
   }
 
-  return (
-    <div className={styles.habitContainer} key={habit.id}>
-      <div className={styles.description}>
-        <span className={styles.label}>微习惯名称: </span>
-        <span className={styles.text}>{habit.name}</span>
-      </div>
-      <div className={styles.description}>
-        <span className={styles.label}>最小完成标准: </span>
-        <span className={styles.text}>
-          {habit.minimumCompletionRequirement}
-        </span>
-      </div>
-      <div className={styles.description}>
-        <span className={styles.label}>已完成次数: </span>
-        <span className={styles.text}>{habit.achieveCount}</span>
-      </div>
-      <div className={styles.actions}>
-        <Button
-          block
-          shape="rounded"
-          size="mini"
-          color="primary"
-          onClick={() => onAchieveTarget(habit.id)}
-          loading={achieveLoading}
-          disabled={habit.isCompletedToday}
-        >
-          {habit.isCompletedToday ? '今日已完成' : '完成今日目标'}
-        </Button>
+  const targetDays = 20
+  const leftDays = targetDays - habit.achieveCount
+  const finishedPercent = Math.ceil((1 - leftDays / targetDays) * 100)
 
-        <Link to={routes.habit({ id: habit.id })}>
+  return (
+    <div
+      className={styles.habitContainer}
+      key={habit.id}
+      onClick={() => {
+        navigate(routes.habit({ id: habit.id }))
+      }}
+      aria-hidden="true"
+    >
+      <div className={styles.main}>
+        <div className={styles.content}>
+          <div className={styles.description}>
+            {/* <span className={styles.label}>微习惯名称: </span> */}
+            <div className={styles.title}>{habit.name}</div>
+          </div>
+          <div className={styles.description}>
+            {/* <div className={styles.label}>最小完成标准: </div> */}
+            <div className={styles.text}>
+              {habit.minimumCompletionRequirement}
+            </div>
+          </div>
+          {/* <div className={styles.description}>
+          <div className={styles.label}>已完成次数: </div>
+          <div className={styles.text}>{habit.achieveCount}</div>
+        </div> */}
+        </div>
+
+        <div className={styles.actions}>
+          <Button
+            block
+            shape="rounded"
+            size="small"
+            color="primary"
+            onClick={(e) => {
+              e.stopPropagation()
+
+              onAchieveTarget(habit.id)
+            }}
+            loading={achieveLoading}
+            disabled={habit.isCompletedToday}
+          >
+            {habit.isCompletedToday ? '今日已完成' : '完成此目标'}
+          </Button>
+
+          <span className={styles.text}>还剩 {leftDays} 天晋升</span>
+          {/* <Link to={routes.habit({ id: habit.id })}>
           <Button block shape="rounded" size="mini">
             查看详情
           </Button>
-        </Link>
+        </Link> */}
+        </div>
+      </div>
+
+      <div className={styles.progressBar}>
+        <ProgressBar
+          percent={finishedPercent}
+          style={{
+            '--track-width': '5px',
+          }}
+        />
       </div>
     </div>
   )

@@ -17,7 +17,7 @@ export const todayHabits: QueryResolvers['todayHabits'] = async () => {
     },
   })
 
-  return result.map((habit) => {
+  const habitsWithCompletedInfo = result.map((habit) => {
     // 任务今天已更新，并且完成数量 > 1
     const isCompletedToday =
       habit.updatedAt.getTime() >= dayjs().startOf('day').toDate().getTime() &&
@@ -28,6 +28,11 @@ export const todayHabits: QueryResolvers['todayHabits'] = async () => {
       isCompletedToday,
     }
   })
+
+  return [
+    ...habitsWithCompletedInfo.filter((habit) => !habit.isCompletedToday),
+    ...habitsWithCompletedInfo.filter((habit) => habit.isCompletedToday),
+  ]
 }
 
 export const habits: QueryResolvers['habits'] = () => {
