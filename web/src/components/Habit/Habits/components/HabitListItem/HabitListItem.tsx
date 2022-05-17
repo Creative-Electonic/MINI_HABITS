@@ -1,6 +1,6 @@
 import { Link, navigate, routes } from '@redwoodjs/router'
 import { useMutation } from '@redwoodjs/web'
-import { Toast, Button, ProgressBar } from 'antd-mobile'
+import { Toast, Button, ProgressBar, Tag } from 'antd-mobile'
 import { useState } from 'react'
 import { QUERY } from 'src/components/Habit/HabitsCell'
 import { HabitItem } from '../../Habits'
@@ -91,7 +91,6 @@ const HabitListItem = ({ habit }: { habit: HabitItem }) => {
             {habit.isCompletedToday ? '今日已完成' : '完成此目标'}
           </Button>
 
-          <span className={styles.text}>还剩 {leftDays} 天晋升</span>
           {/* <Link to={routes.habit({ id: habit.id })}>
           <Button block shape="rounded" size="mini">
             查看详情
@@ -100,6 +99,13 @@ const HabitListItem = ({ habit }: { habit: HabitItem }) => {
         </div>
       </div>
 
+      <div className={styles.finishInfo}>
+        <Tag
+          round
+          color="primary"
+        >{`${habit.achieveCount} / ${targetDays}`}</Tag>
+        <span className={styles.text}>还剩 {leftDays} 天晋升</span>
+      </div>
       <div className={styles.progressBar}>
         <ProgressBar
           percent={finishedPercent}
