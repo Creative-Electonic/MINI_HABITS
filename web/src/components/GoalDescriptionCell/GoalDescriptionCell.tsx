@@ -1,6 +1,6 @@
 import type { FindTodayHabits } from 'types/graphql'
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
-import { ProgressCircle } from 'antd-mobile'
+import { DotLoading, ProgressCircle } from 'antd-mobile'
 import styles from './GoalDescriptionCell.module.scss'
 
 export const QUERY = gql`
@@ -45,7 +45,7 @@ const Layout = ({
 
 export const Loading = () => (
   <Layout>
-    <span>你的数据正往返于美国西海岸~</span>
+    <DotLoading />
   </Layout>
 )
 

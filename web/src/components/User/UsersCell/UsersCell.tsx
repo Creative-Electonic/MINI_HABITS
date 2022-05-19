@@ -15,16 +15,13 @@ export const QUERY = gql`
   }
 `
 
-export const Loading = () => <div>Loading...</div>
+export const Loading = () => <div>你的数据正往返于美国西海岸~</div>
 
 export const Empty = () => {
   return (
     <div className="rw-text-center">
       {'No users yet. '}
-      <Link
-        to={routes.newUser()}
-        className="rw-link"
-      >
+      <Link to={routes.newUser()} className="rw-link">
         {'Create one?'}
       </Link>
     </div>
