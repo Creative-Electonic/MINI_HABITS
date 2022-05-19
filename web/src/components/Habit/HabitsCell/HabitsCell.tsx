@@ -33,7 +33,7 @@ export const Loading = () => (
   <Layout>
     <div className={styles.loadingContainer}>
       <SpinLoading />
-      <span>Loading</span>
+      <div>数据正从美国西海岸飞奔回来</div>
     </div>
   </Layout>
 )
