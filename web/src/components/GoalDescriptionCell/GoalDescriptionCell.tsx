@@ -45,7 +45,7 @@ const Layout = ({
 
 export const Loading = () => (
   <Layout>
-    <span>Loading</span>
+    <span>你的数据正往返于美国西海岸~</span>
   </Layout>
 )
 
