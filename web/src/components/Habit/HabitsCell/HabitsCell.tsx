@@ -22,7 +22,7 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
   return (
     <>
       {/* title */}
-      <div className={styles.title}>Today&apos;s Tasks</div>
+      <div className={styles.title}>Habits List</div>
 
       {children}
     </>
