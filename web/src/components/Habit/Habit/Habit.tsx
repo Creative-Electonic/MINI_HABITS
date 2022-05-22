@@ -58,7 +58,7 @@ const Habit = ({ habit }) => {
   })
 
   const onDeleteClick = (id) => {
-    if (confirm('Are you sure you want to delete habit ' + id + '?')) {
+    if (confirm('Are you sure you want to delete habit ' + habit.name + '?')) {
       deleteHabit({ variables: { id } })
     }
   }
