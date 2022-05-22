@@ -12,7 +12,7 @@ const HabitsLayout = ({ children }: HabitLayoutProps) => {
       <header className="rw-header">
         <h1 className="rw-heading rw-heading-primary">
           <Link
-            to={routes.habits()}
+            to={routes.list()}
             className="rw-link"
           >
             Habits

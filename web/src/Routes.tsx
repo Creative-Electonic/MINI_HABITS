@@ -14,18 +14,20 @@ import AppLayout from './layouts/AppLayout/AppLayout'
 const Routes = () => {
   return (
     <Router>
-      <Set wrap={HabitsLayout}>
-        <Route path="/habits/new" page={HabitNewHabitPage} name="newHabit" />
-        <Route path="/habits/{id}/edit" page={HabitEditHabitPage} name="editHabit" />
-        <Route path="/habits/{id}" page={HabitHabitPage} name="habit" />
-        <Route path="/habits" page={HabitHabitsPage} name="habits" />
-      </Set>
       <Set wrap={AppLayout}>
         {/* <Route path="/users/new" page={UserNewUserPage} name="newUser" />
-          <Route path="/users/{id:Int}/edit" page={UserEditUserPage} name="editUser" />
-          <Route path="/users/{id:Int}" page={UserUserPage} name="user" />
-          <Route path="/users" page={UserUsersPage} name="users" /> */}
+          // <Route path="/users/{id:Int}/edit" page={UserEditUserPage} name="editUser" />
+          // <Route path="/users/{id:Int}" page={UserUserPage} name="user" />
+          // <Route path="/users" page={UserUsersPage} name="users" /> */}
+
         <Route path="/list" page={ListPage} name="list" />
+        <Route path="/habits/new" page={HabitNewHabitPage} name="newHabit" />
+      </Set>
+
+      <Set wrap={HabitsLayout}>
+        <Route path="/habits/{id}/edit" page={HabitEditHabitPage} name="editHabit" />
+        <Route path="/habits/{id}" page={HabitHabitPage} name="habit" />
+        {/* <Route path="/habits" page={HabitHabitsPage} name="habits" /> */}
       </Set>
 
       <Route path="/" redirect="/list" />

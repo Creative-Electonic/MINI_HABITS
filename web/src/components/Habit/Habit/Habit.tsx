@@ -49,7 +49,7 @@ const Habit = ({ habit }) => {
   const [deleteHabit] = useMutation(DELETE_HABIT_MUTATION, {
     onCompleted: () => {
       toast.success('Habit deleted')
-      navigate(routes.habits())
+      navigate(routes.list())
     },
     onError: (error) => {
       toast.error(error.message)

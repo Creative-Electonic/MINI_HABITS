@@ -12,7 +12,7 @@ export const schema = gql`
   type Query {
     habits: [Habit!]! @requireAuth
     habit(id: String!): Habit @requireAuth
-    todayHabits: [Habit!]! @requireAuth
+    todayHabits(userId: String!): [Habit!]! @requireAuth
   }
 
   input CreateHabitInput {

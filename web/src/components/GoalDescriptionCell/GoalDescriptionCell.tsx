@@ -4,8 +4,8 @@ import { DotLoading, ProgressCircle } from 'antd-mobile'
 import styles from './GoalDescriptionCell.module.scss'
 
 export const QUERY = gql`
-  query FindTodayHabits {
-    todayHabits {
+  query FindTodayHabits($userId: String!) {
+    todayHabits(userId: $userId) {
       id
       name
       minimumCompletionRequirement
@@ -51,7 +51,9 @@ export const Loading = () => (
 
 export const Empty = () => (
   <Layout>
-    <span>还没有创建任务哦</span>
+    <div className={styles.info}>
+      <div className={styles.description}>No Goals Info</div>
+    </div>
   </Layout>
 )
 
@@ -69,11 +71,15 @@ export const Success = ({ todayHabits }: CellSuccessProps<FindTodayHabits>) => {
 
   const percent = totalCount ? Math.ceil((finishedCount / totalCount) * 100) : 0
 
+  const isCompletedToday = totalCount === finishedCount
+
   return (
     <Layout percent={percent}>
       <div className={styles.info}>
         <div className={styles.description}>
-          Wow! your daily goals is almost done!
+          {isCompletedToday
+            ? 'Wow! You have achieved all your goals!'
+            : 'Your daily goals is almost done!'}
         </div>
         <div className={styles.textCount}>
           {`${finishedCount} of

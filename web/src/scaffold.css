@@ -72,7 +72,7 @@
   padding: 0.75rem 1rem;
 }
 .rw-segment-main {
-  background-color: #f7fafc;
+  /* background-color: #f7fafc; */
   padding: 1rem;
 }
 .rw-link {
@@ -164,6 +164,10 @@
   padding: 0.25rem 0.5rem;
   line-height: inherit;
 }
+.rw-button.rw-button-main{
+  background-color:#ff7f00;
+  color: #fff;
+}
 .rw-button.rw-button-green {
   background-color: #48bb78;
   color: #fff;
@@ -215,7 +219,7 @@
 .rw-input {
   display: block;
   margin-top: 0.5rem;
-  width: 100%;
+  width: 90%;
   padding: 0.5rem;
   border-width: 1px;
   border-style: solid;

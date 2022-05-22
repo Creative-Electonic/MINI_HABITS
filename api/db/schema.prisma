@@ -8,24 +8,24 @@ generator client {
   binaryTargets = "native"
 }
 
-model User {
-  id String @id @default(uuid())
-  email String?
-  name String @unique
-  habits Habit[]
-  habitAchieveLogs HabitAchieveLog[]
+// model User {
+//   id String @id @default(uuid())
+//   email String?
+//   name String @unique
+//   habits Habit[]
+//   habitAchieveLogs HabitAchieveLog[]
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt @default(now())
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt @default(now())
 
-}
+// }
 
 model Habit {
   id String @id @default(uuid())
   name String @unique
   minimumCompletionRequirement String
   achieveCount Int
-  user User @relation(fields: [userId], references: [id])
+  // user User @relation(fields: [userId], references: [id])
   userId String
   habitAchieveLogs HabitAchieveLog[]
 
@@ -37,7 +37,7 @@ model HabitAchieveLog {
   id String @id @default(uuid())
   habit Habit @relation(fields: [habitId], references: [id])
   habitId String
-  user User @relation(fields: [userId], references: [id])
+  // user User @relation(fields: [userId], references: [id])
   userId String
 
   createdAt DateTime @default(now())

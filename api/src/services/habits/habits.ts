@@ -7,10 +7,13 @@ import type {
   HabitResolvers,
 } from 'types/graphql'
 
-export const todayHabits: QueryResolvers['todayHabits'] = async () => {
+export const todayHabits: QueryResolvers['todayHabits'] = async ({
+  userId,
+}) => {
+  logger.info('userId: ' + userId)
   const result = await db.habit.findMany({
     where: {
-      // user
+      userId,
     },
     orderBy: {
       updatedAt: 'asc',

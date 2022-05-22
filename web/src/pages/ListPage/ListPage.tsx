@@ -5,10 +5,9 @@ import styles from './ListPage.module.scss'
 import logo from 'src/assets/favicon.png'
 
 import GoalDescriptionCell from 'src/components/GoalDescriptionCell'
+import userStore from 'src/stores/user.store'
 
 const ListPage = () => {
-  const userName = 'Peter'
-
   return (
     <div className={styles.container}>
       <MetaTags title="List" description="List page" />
@@ -20,15 +19,15 @@ const ListPage = () => {
       </div>
 
       {/* welcome part */}
-      <div className={styles.welcome}>Welcome {userName}! 👋🏻</div>
+      <div className={styles.welcome}>Welcome Adventurer! 👋🏻</div>
 
       {/* today goal */}
       <div className={styles.goal}>
-        <GoalDescriptionCell />
+        <GoalDescriptionCell userId={userStore.userInfo.id} />
       </div>
 
       {/* list */}
-      <HabitsCell />
+      <HabitsCell userId={userStore.userInfo.id} />
     </div>
   )
 }

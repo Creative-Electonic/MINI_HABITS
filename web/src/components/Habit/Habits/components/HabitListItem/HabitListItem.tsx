@@ -3,6 +3,7 @@ import { useMutation } from '@redwoodjs/web'
 import { Toast, Button, ProgressBar, Tag } from 'antd-mobile'
 import { useState } from 'react'
 import { QUERY } from 'src/components/Habit/HabitsCell'
+import userStore from 'src/stores/user.store'
 import { HabitItem } from '../../Habits'
 import styles from './HabitListItem.module.scss'
 
@@ -22,7 +23,7 @@ const HabitListItem = ({ habit }: { habit: HabitItem }) => {
 
       Toast.show({
         icon: 'success',
-        content: '微习惯打卡成功',
+        content: 'Mini Habits Completed',
       })
     },
     onError: (error) => {
@@ -33,7 +34,9 @@ const HabitListItem = ({ habit }: { habit: HabitItem }) => {
         content: error.message,
       })
     },
-    refetchQueries: [{ query: QUERY }],
+    refetchQueries: [
+      { query: QUERY, variables: { userId: userStore.userInfo.id } },
+    ],
     awaitRefetchQueries: true,
   })
 
@@ -59,19 +62,13 @@ const HabitListItem = ({ habit }: { habit: HabitItem }) => {
       <div className={styles.main}>
         <div className={styles.content}>
           <div className={styles.description}>
-            {/* <span className={styles.label}>微习惯名称: </span> */}
             <div className={styles.title}>{habit.name}</div>
           </div>
           <div className={styles.description}>
-            {/* <div className={styles.label}>最小完成标准: </div> */}
             <div className={styles.text}>
               {habit.minimumCompletionRequirement}
             </div>
           </div>
-          {/* <div className={styles.description}>
-          <div className={styles.label}>已完成次数: </div>
-          <div className={styles.text}>{habit.achieveCount}</div>
-        </div> */}
         </div>
 
         <div className={styles.actions}>
@@ -88,14 +85,8 @@ const HabitListItem = ({ habit }: { habit: HabitItem }) => {
             loading={achieveLoading}
             disabled={habit.isCompletedToday}
           >
-            {habit.isCompletedToday ? '今日已完成' : '完成此目标'}
+            {habit.isCompletedToday ? 'Finished Today' : 'Achieve the goal'}
           </Button>
-
-          {/* <Link to={routes.habit({ id: habit.id })}>
-          <Button block shape="rounded" size="mini">
-            查看详情
-          </Button>
-        </Link> */}
         </div>
       </div>
 
@@ -104,7 +95,7 @@ const HabitListItem = ({ habit }: { habit: HabitItem }) => {
           round
           color="primary"
         >{`${habit.achieveCount} / ${targetDays}`}</Tag>
-        <span className={styles.text}>还剩 {leftDays} 天晋升</span>
+        <span className={styles.text}>{leftDays} days to upgrade</span>
       </div>
       <div className={styles.progressBar}>
         <ProgressBar

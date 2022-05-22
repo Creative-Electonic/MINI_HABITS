@@ -3,11 +3,12 @@ import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
 import Habits from 'src/components/Habit/Habits'
 import styles from './HabitsCell.module.scss'
-import { SpinLoading } from 'antd-mobile'
+import { Button, SpinLoading } from 'antd-mobile'
+import { navigate, routes } from '@redwoodjs/router'
 
 export const QUERY = gql`
-  query FindTodayHabits {
-    todayHabits {
+  query FindTodayHabits($userId: String!) {
+    todayHabits(userId: $userId) {
       id
       name
       minimumCompletionRequirement
@@ -33,14 +34,24 @@ export const Loading = () => (
   <Layout>
     <div className={styles.loadingContainer}>
       <SpinLoading />
-      <div>数据正从美国西海岸飞奔回来</div>
+      <div>Data is rushing back from United States</div>
     </div>
   </Layout>
 )
 
 export const Empty = () => (
   <Layout>
-    <span>没有已创建的任务</span>
+    <div className={styles.container}>
+      <span className={styles.tips}>No created habits</span>
+      <Button
+        shape="rounded"
+        size="small"
+        color="primary"
+        onClick={() => navigate(routes.newHabit())}
+      >
+        Create
+      </Button>
+    </div>
   </Layout>
 )
 
@@ -53,5 +64,16 @@ export const Failure = ({ error }: CellFailureProps) => (
 export const Success = ({ todayHabits }: CellSuccessProps<FindTodayHabits>) => (
   <Layout>
     <Habits todayHabits={todayHabits} />
+
+    <div className={styles.container}>
+      <Button
+        shape="rounded"
+        size="small"
+        color="primary"
+        onClick={() => navigate(routes.newHabit())}
+      >
+        Create
+      </Button>
+    </div>
   </Layout>
 )

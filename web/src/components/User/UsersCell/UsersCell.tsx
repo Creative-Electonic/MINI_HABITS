@@ -15,7 +15,7 @@ export const QUERY = gql`
   }
 `
 
-export const Loading = () => <div>数据正从美国西海岸飞奔回来</div>
+export const Loading = () => <div>loading</div>
 
 export const Empty = () => {
   return (

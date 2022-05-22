@@ -40,7 +40,7 @@ export const Success = ({ habit }: CellSuccessProps<EditHabitById>) => {
   const [updateHabit, { loading, error }] = useMutation(UPDATE_HABIT_MUTATION, {
     onCompleted: () => {
       toast.success('Habit updated')
-      navigate(routes.habits())
+      navigate(routes.list())
     },
     onError: (error) => {
       toast.error(error.message)
@@ -54,10 +54,17 @@ export const Success = ({ habit }: CellSuccessProps<EditHabitById>) => {
   return (
     <div className="rw-segment">
       <header className="rw-segment-header">
-        <h2 className="rw-heading rw-heading-secondary">Edit Habit {habit.id}</h2>
+        <h2 className="rw-heading rw-heading-secondary">
+          Edit Habit {habit.id}
+        </h2>
       </header>
       <div className="rw-segment-main">
-        <HabitForm habit={habit} onSave={onSave} error={error} loading={loading} />
+        <HabitForm
+          habit={habit}
+          onSave={onSave}
+          error={error}
+          loading={loading}
+        />
       </div>
     </div>
   )
