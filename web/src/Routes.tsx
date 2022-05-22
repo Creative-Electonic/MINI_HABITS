@@ -22,13 +22,11 @@ const Routes = () => {
 
         <Route path="/list" page={ListPage} name="list" />
         <Route path="/habits/new" page={HabitNewHabitPage} name="newHabit" />
+        <Route path="/habits/{id}" page={HabitHabitPage} name="habit" />
+        <Route path="/habits/{id}/edit" page={HabitEditHabitPage} name="editHabit" />
       </Set>
 
-      <Set wrap={HabitsLayout}>
-        <Route path="/habits/{id}/edit" page={HabitEditHabitPage} name="editHabit" />
-        <Route path="/habits/{id}" page={HabitHabitPage} name="habit" />
-        {/* <Route path="/habits" page={HabitHabitsPage} name="habits" /> */}
-      </Set>
+      <Set wrap={HabitsLayout}>{/* <Route path="/habits" page={HabitHabitsPage} name="habits" /> */}</Set>
 
       <Route path="/" redirect="/list" />
       <Route notfound page={NotFoundPage} />

@@ -112,7 +112,7 @@ const HabitForm = (props) => {
             color="primary"
             shape="rounded"
           >
-            save
+            Save
           </Button>
           <div style={{ width: '10px' }}></div>
           <Button

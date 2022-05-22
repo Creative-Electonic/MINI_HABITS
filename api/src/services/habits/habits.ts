@@ -14,6 +14,7 @@ export const todayHabits: QueryResolvers['todayHabits'] = async ({
   const result = await db.habit.findMany({
     where: {
       userId,
+      isDeleted: false,
     },
     orderBy: {
       updatedAt: 'asc',
@@ -65,7 +66,8 @@ export const updateHabit: MutationResolvers['updateHabit'] = ({
 }
 
 export const deleteHabit: MutationResolvers['deleteHabit'] = ({ id }) => {
-  return db.habit.delete({
+  return db.habit.update({
+    data: { isDeleted: true },
     where: { id },
   })
 }
@@ -80,7 +82,7 @@ export const achieveHabit: MutationResolvers['achieveHabit'] = async ({
   await db.habitAchieveLog.create({
     data: {
       habitId: id,
-      userId: '1',
+      userId: targetHabit.userId,
     },
   })
 

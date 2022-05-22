@@ -3,6 +3,7 @@ import humanize from 'humanize-string'
 import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 import { Link, routes, navigate } from '@redwoodjs/router'
+import { Button } from 'antd-mobile'
 
 const DELETE_HABIT_MUTATION = gql`
   mutation DeleteHabitMutation($id: String!) {
@@ -64,45 +65,63 @@ const Habit = ({ habit }) => {
 
   return (
     <>
-      <div className="rw-segment">
-        <header className="rw-segment-header">
+      <div className="rw-main">
+        {/* <header className="rw-segment-header">
           <h2 className="rw-heading rw-heading-secondary">Habit {habit.id} Detail</h2>
-        </header>
+        </header> */}
+        <h1>Habit Detail</h1>
         <table className="rw-table">
           <tbody>
-            <tr>
+            {/* <tr>
               <th>Id</th>
               <td>{habit.id}</td>
-            </tr><tr>
+            </tr> */}
+            <tr>
               <th>Name</th>
               <td>{habit.name}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Minimum completion requirement</th>
               <td>{habit.minimumCompletionRequirement}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Achieve count</th>
               <td>{habit.achieveCount}</td>
-            </tr><tr>
+            </tr>
+            {/* <tr>
               <th>User id</th>
               <td>{habit.userId}</td>
-            </tr>
+            </tr> */}
           </tbody>
         </table>
       </div>
       <nav className="rw-button-group">
-        <Link
-          to={routes.editHabit({ id: habit.id })}
-          className="rw-button rw-button-blue"
-        >
-          Edit
+        <Link to={routes.editHabit({ id: habit.id })}>
+          <Button size="small" color="warning" shape="rounded">
+            Edit
+          </Button>
         </Link>
-        <button
-          type="button"
-          className="rw-button rw-button-red"
+
+        <div style={{ width: '10px' }}></div>
+
+        <Button
+          size="small"
+          color="danger"
+          shape="rounded"
           onClick={() => onDeleteClick(habit.id)}
         >
           Delete
-        </button>
+        </Button>
+
+        <div style={{ width: '10px' }}></div>
+
+        <Button
+          shape="rounded"
+          size="small"
+          onClick={() => navigate(routes.list())}
+        >
+          Cancel
+        </Button>
       </nav>
     </>
   )

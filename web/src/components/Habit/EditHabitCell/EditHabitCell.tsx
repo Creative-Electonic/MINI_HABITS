@@ -52,20 +52,19 @@ export const Success = ({ habit }: CellSuccessProps<EditHabitById>) => {
   }
 
   return (
-    <div className="rw-segment">
-      <header className="rw-segment-header">
+    <div className="rw-main">
+      {/* <header className="rw-segment-header">
         <h2 className="rw-heading rw-heading-secondary">
           Edit Habit {habit.id}
         </h2>
-      </header>
-      <div className="rw-segment-main">
-        <HabitForm
-          habit={habit}
-          onSave={onSave}
-          error={error}
-          loading={loading}
-        />
-      </div>
+      </header> */}
+      <h1>Edit Habit</h1>
+      <HabitForm
+        habit={habit}
+        onSave={onSave}
+        error={error}
+        loading={loading}
+      />
     </div>
   )
 }
