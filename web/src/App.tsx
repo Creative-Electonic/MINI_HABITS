@@ -15,7 +15,7 @@ import * as Sentry from '@sentry/react'
 import { BrowserTracing } from '@sentry/tracing'
 import userStore from './stores/user.store'
 import { observer } from 'mobx-react-lite'
-import { action } from 'mobx'
+import { action, runInAction } from 'mobx'
 
 Sentry.init({
   dsn: 'https://1eac5e122e794c03b5033109d142c28b@o540966.ingest.sentry.io/6418210',
@@ -35,7 +35,7 @@ const App = () => {
   const onLogin = (userInfo) => {
     localStorage.setItem('USER_INFO', JSON.stringify(userInfo))
 
-    action(() => {
+    runInAction(() => {
       userStore.userInfo = userInfo
     })
 
