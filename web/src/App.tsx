@@ -55,7 +55,9 @@ const App = () => {
           </RedwoodApolloProvider>
         </RedwoodProvider>
       ) : (
-        <Guard appId={authAppId} onLogin={onLogin} />
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <Guard appId={authAppId} onLogin={onLogin} />
+        </div>
       )}
     </FatalErrorBoundary>
   )
