@@ -93,7 +93,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@authing/react-ui-components@npm:^3.1.13":
+"@authing/react-ui-components@npm:3.1.13":
   version: 3.1.13
   resolution: "@authing/react-ui-components@npm:3.1.13"
   dependencies:
@@ -3640,7 +3640,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/api@npm:1.5.1, @redwoodjs/api@npm:^1.5.1":
+"@redwoodjs/api@npm:1.5.1":
   version: 1.5.1
   resolution: "@redwoodjs/api@npm:1.5.1"
   dependencies:
@@ -3734,7 +3734,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/core@npm:^1.5.1":
+"@redwoodjs/core@npm:1.5.1":
   version: 1.5.1
   resolution: "@redwoodjs/core@npm:1.5.1"
   dependencies:
@@ -3833,7 +3833,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/forms@npm:^1.5.1":
+"@redwoodjs/forms@npm:1.5.1":
   version: 1.5.1
   resolution: "@redwoodjs/forms@npm:1.5.1"
   dependencies:
@@ -3848,7 +3848,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/graphql-server@npm:1.5.1, @redwoodjs/graphql-server@npm:^1.5.1":
+"@redwoodjs/graphql-server@npm:1.5.1":
   version: 1.5.1
   resolution: "@redwoodjs/graphql-server@npm:1.5.1"
   dependencies:
@@ -3939,7 +3939,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/router@npm:1.5.1, @redwoodjs/router@npm:^1.5.1":
+"@redwoodjs/router@npm:1.5.1":
   version: 1.5.1
   resolution: "@redwoodjs/router@npm:1.5.1"
   dependencies:
@@ -4039,7 +4039,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/web@npm:1.5.1, @redwoodjs/web@npm:^1.5.1":
+"@redwoodjs/web@npm:1.5.1":
   version: 1.5.1
   resolution: "@redwoodjs/web@npm:1.5.1"
   dependencies:
@@ -4139,7 +4139,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry/react@npm:^6.19.7":
+"@sentry/react@npm:6.19.7":
   version: 6.19.7
   resolution: "@sentry/react@npm:6.19.7"
   dependencies:
@@ -4155,7 +4155,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry/tracing@npm:^6.19.7":
+"@sentry/tracing@npm:6.19.7":
   version: 6.19.7
   resolution: "@sentry/tracing@npm:6.19.7"
   dependencies:
@@ -6219,7 +6219,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/ua-parser-js@npm:^0.7.36":
+"@types/ua-parser-js@npm:0.7.36":
   version: 0.7.36
   resolution: "@types/ua-parser-js@npm:0.7.36"
   checksum: 9ac418a56265a6a8cbac16d69b801c0e922514f81f16dc181405d3eb86b83a4c32a5cf4aab7a095702103ebc4e99206c9a7738aee1e3492da2d472c95fb36c68
@@ -7301,7 +7301,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"antd-mobile@npm:^5.12.2":
+"antd-mobile@npm:5.12.2":
   version: 5.12.2
   resolution: "antd-mobile@npm:5.12.2"
   dependencies:
@@ -7411,8 +7411,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "api@workspace:api"
   dependencies:
-    "@redwoodjs/api": ^1.5.1
-    "@redwoodjs/graphql-server": ^1.5.1
+    "@redwoodjs/api": 1.5.1
+    "@redwoodjs/graphql-server": 1.5.1
   languageName: unknown
   linkType: soft
 
@@ -10516,7 +10516,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:1.x, dayjs@npm:^1.11.2, dayjs@npm:^1.9.1":
+"dayjs@npm:1.11.2, dayjs@npm:1.x, dayjs@npm:^1.11.2, dayjs@npm:^1.9.1":
   version: 1.11.2
   resolution: "dayjs@npm:1.11.2"
   checksum: 90bc4605d1733ac0f90faa11255ef862322ce94795ee256aa56007df000f6225e4031afdb6c764c791ed303c433f88832a7572c461fd53fb0ad5cd334a46c866
@@ -17092,7 +17092,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"logrocket@npm:^3.0.0":
+"logrocket@npm:3.0.0":
   version: 3.0.0
   resolution: "logrocket@npm:3.0.0"
   checksum: 356e3275221fafd87906b72fe1cf3f050e33a149edeb43379ba82cb95b5042e09e26a1ef3937bfc79e2eb9acdca41abf7373220c64b2b9c25af482d46d26612a
@@ -17679,10 +17679,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "mini-habits@workspace:."
   dependencies:
-    "@redwoodjs/core": ^1.5.1
-    "@types/ua-parser-js": ^0.7.36
-    dayjs: ^1.11.2
-    ua-parser-js: ^1.0.2
+    "@redwoodjs/core": 1.5.1
+    "@types/ua-parser-js": 0.7.36
+    dayjs: 1.11.2
+    ua-parser-js: 1.0.2
   languageName: unknown
   linkType: soft
 
@@ -17852,7 +17852,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mobx-react-lite@npm:^3.4.0":
+"mobx-react-lite@npm:3.4.0":
   version: 3.4.0
   resolution: "mobx-react-lite@npm:3.4.0"
   peerDependencies:
@@ -17867,7 +17867,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mobx@npm:^6.5.0":
+"mobx@npm:6.5.0":
   version: 6.5.0
   resolution: "mobx@npm:6.5.0"
   checksum: 25ead5caba85018b710bd7acd34c1532a082f0f692b921c6aadd5cc599d28107f238b8bcac37a1357a510a6f253f98823bfde950fd706be4da097cdf376e8b0f
@@ -18589,7 +18589,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"open-color@npm:^1.9.1":
+"open-color@npm:1.9.1":
   version: 1.9.1
   resolution: "open-color@npm:1.9.1"
   checksum: eaafb454fbdd95f642716cacc6b4ff40b21e9314bb7259542781ea995328fe501816a6eb523f582c83203a92e16e57aea143df3eaa814fe51fdb02b664ddc749
@@ -21996,7 +21996,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass-loader@npm:^12.6.0":
+"sass-loader@npm:12.6.0":
   version: 12.6.0
   resolution: "sass-loader@npm:12.6.0"
   dependencies:
@@ -22021,7 +22021,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.51.0":
+"sass@npm:1.51.0":
   version: 1.51.0
   resolution: "sass@npm:1.51.0"
   dependencies:
@@ -24288,17 +24288,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ua-parser-js@npm:1.0.2":
+  version: 1.0.2
+  resolution: "ua-parser-js@npm:1.0.2"
+  checksum: bf3419a3a613596a93c4d0e82dd9ae0b49fe50bb9fbea9033af92c3c896aa2fd62323673d9e49ae89f7b10fc77084ba5537c7c05be8f7d12eba50effb45e4abb
+  languageName: node
+  linkType: hard
+
 "ua-parser-js@npm:^0.7.30":
   version: 0.7.31
   resolution: "ua-parser-js@npm:0.7.31"
   checksum: 22ea7a73db4528f4b8c5e9ed3d711dfc005f9efa5e6f803e5b78bf358c1d81baaed2699fc1f35252a316f64f3fdf730919fa97e7cc1ae66d3011bd515a4a0f30
-  languageName: node
-  linkType: hard
-
-"ua-parser-js@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "ua-parser-js@npm:1.0.2"
-  checksum: bf3419a3a613596a93c4d0e82dd9ae0b49fe50bb9fbea9033af92c3c896aa2fd62323673d9e49ae89f7b10fc77084ba5537c7c05be8f7d12eba50effb45e4abb
   languageName: node
   linkType: hard
 
@@ -25022,22 +25022,22 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:web"
   dependencies:
-    "@authing/react-ui-components": ^3.1.13
-    "@redwoodjs/forms": ^1.5.1
-    "@redwoodjs/router": ^1.5.1
-    "@redwoodjs/web": ^1.5.1
-    "@sentry/react": ^6.19.7
-    "@sentry/tracing": ^6.19.7
-    antd-mobile: ^5.12.2
-    logrocket: ^3.0.0
-    mobx: ^6.5.0
-    mobx-react-lite: ^3.4.0
-    open-color: ^1.9.1
+    "@authing/react-ui-components": 3.1.13
+    "@redwoodjs/forms": 1.5.1
+    "@redwoodjs/router": 1.5.1
+    "@redwoodjs/web": 1.5.1
+    "@sentry/react": 6.19.7
+    "@sentry/tracing": 6.19.7
+    antd-mobile: 5.12.2
+    logrocket: 3.0.0
+    mobx: 6.5.0
+    mobx-react-lite: 3.4.0
+    open-color: 1.9.1
     prop-types: 15.8.1
     react: 17.0.2
     react-dom: 17.0.2
-    sass: ^1.51.0
-    sass-loader: ^12.6.0
+    sass: 1.51.0
+    sass-loader: 12.6.0
   languageName: unknown
   linkType: soft
 
