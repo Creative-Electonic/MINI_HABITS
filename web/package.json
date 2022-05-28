@@ -14,9 +14,9 @@
   },
   "dependencies": {
     "@authing/react-ui-components": "^3.1.13",
-    "@redwoodjs/forms": "^1.4.0",
-    "@redwoodjs/router": "^1.4.0",
-    "@redwoodjs/web": "^1.4.0",
+    "@redwoodjs/forms": "^1.5.1",
+    "@redwoodjs/router": "^1.5.1",
+    "@redwoodjs/web": "^1.5.1",
     "@sentry/react": "^6.19.7",
     "@sentry/tracing": "^6.19.7",
     "antd-mobile": "^5.12.2",
