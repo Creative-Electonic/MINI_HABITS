@@ -13,23 +13,23 @@
     ]
   },
   "dependencies": {
-    "@authing/react-ui-components": "^3.1.13",
-    "@redwoodjs/forms": "^1.5.1",
-    "@redwoodjs/router": "^1.5.1",
-    "@redwoodjs/web": "^1.5.1",
-    "@sentry/react": "^6.19.7",
-    "@sentry/tracing": "^6.19.7",
-    "antd-mobile": "^5.12.2",
-    "logrocket": "^3.0.0",
-    "mobx": "^6.5.0",
-    "mobx-react-lite": "^3.4.0",
-    "open-color": "^1.9.1",
+    "@authing/react-ui-components": "3.1.13",
+    "@redwoodjs/forms": "1.5.1",
+    "@redwoodjs/router": "1.5.1",
+    "@redwoodjs/web": "1.5.1",
+    "@sentry/react": "6.19.7",
+    "@sentry/tracing": "6.19.7",
+    "antd-mobile": "5.12.2",
+    "logrocket": "3.0.0",
+    "mobx": "6.5.0",
+    "mobx-react-lite": "3.4.0",
+    "open-color": "1.9.1",
     "prop-types": "15.8.1",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "sass": "^1.51.0",
-    "sass-loader": "^12.6.0"
+    "sass": "1.51.0",
+    "sass-loader": "12.6.0"
   }
 }
