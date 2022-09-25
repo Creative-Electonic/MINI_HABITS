@@ -22021,16 +22021,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.51.0":
-  version: 1.51.0
-  resolution: "sass@npm:1.51.0"
+"sass@npm:1.55.0":
+  version: 1.55.0
+  resolution: "sass@npm:1.55.0"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: abbd30f51bfaf70afb67bacf9a29bc79c2788c243572514a3f71bb24f0e6493a820bb5dd55d4cfabf7a927a1ece8189330da8475a1b4a329e8d741cffe13b6b6
+  checksum: cc518d8f3ea1fdb4044f665e8fbdd49dc740561ffb188eb164d32edd48d50e7b840f1671c3d95634780c63495f0ae37616e72b251e4bc10c80493b1c2f8e7a6c
   languageName: node
   linkType: hard
 
@@ -25036,7 +25036,7 @@ __metadata:
     prop-types: 15.8.1
     react: 17.0.2
     react-dom: 17.0.2
-    sass: ^1.51.0
+    sass: 1.55.0
     sass-loader: ^12.6.0
   languageName: unknown
   linkType: soft
