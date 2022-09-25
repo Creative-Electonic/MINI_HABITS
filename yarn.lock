@@ -10516,6 +10516,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dayjs@npm:1.11.5":
+  version: 1.11.5
+  resolution: "dayjs@npm:1.11.5"
+  checksum: 1d719b3c821254cbcee93879030c581dee41249ba9b825119881a941656bb885554b03094e2265c2f646945a4e23c3f05a6af5b4ff4d5a51c3e0e962669ee94b
+  languageName: node
+  linkType: hard
+
 "dayjs@npm:1.x, dayjs@npm:^1.11.2, dayjs@npm:^1.9.1":
   version: 1.11.2
   resolution: "dayjs@npm:1.11.2"
@@ -17681,7 +17688,7 @@ __metadata:
   dependencies:
     "@redwoodjs/core": ^1.5.1
     "@types/ua-parser-js": ^0.7.36
-    dayjs: ^1.11.2
+    dayjs: 1.11.5
     ua-parser-js: ^1.0.2
   languageName: unknown
   linkType: soft
