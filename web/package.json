@@ -13,7 +13,7 @@
     ]
   },
   "dependencies": {
-    "@authing/react-ui-components": "^3.1.13",
+    "@authing/react-ui-components": "3.1.39",
     "@redwoodjs/forms": "^1.5.1",
     "@redwoodjs/router": "^1.5.1",
     "@redwoodjs/web": "^1.5.1",

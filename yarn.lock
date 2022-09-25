@@ -93,23 +93,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@authing/react-ui-components@npm:^3.1.13":
-  version: 3.1.13
-  resolution: "@authing/react-ui-components@npm:3.1.13"
+"@authing/react-ui-components@npm:3.1.39":
+  version: 3.1.39
+  resolution: "@authing/react-ui-components@npm:3.1.39"
   dependencies:
     antd: ^4.8.0
-    authing-js-sdk: 4.23.30-alpha.3
+    authing-js-sdk: 4.23.35
     fastclick: ^1.0.6
     global: ^4.4.0
     phone: ^3.1.12
     qs: ^6.9.4
     react-responsive: ^9.0.0-beta.5
     react-use: ^17.3.1
+    ua-parser-js: ^1.0.2
     wildcard: ^1.1.2
   peerDependencies:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
-  checksum: 39a3ee6bfb980bd392221f1129981c15fc77e5a365d34286b1f83ce551e1fa36a5b98bd14a39a2979fb64de99b6f500a9539976a0e7b1c347572b1e8cf7d0cf4
+  checksum: cd2d8f2504d64d1e8a0865c1a4123a065c7a65b57ada773aba4bef7b71bef7f1b2c10acc23d9fdfcadd8b2f87c2a6945df069d29e797f7b73af07fd7f85d0354
   languageName: node
   linkType: hard
 
@@ -7818,16 +7819,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"authing-js-sdk@npm:4.23.30-alpha.3":
-  version: 4.23.30-alpha.3
-  resolution: "authing-js-sdk@npm:4.23.30-alpha.3"
+"authing-js-sdk@npm:4.23.35":
+  version: 4.23.35
+  resolution: "authing-js-sdk@npm:4.23.35"
   dependencies:
     axios: ^0.19.2
     crypto-js: ^4.0.0
     jsencrypt: ^3.1.0
     jwt-decode: ^2.2.0
     sm-crypto: ^0.3.7
-  checksum: 1c5e2472d9c9c8fd66c3dce50f7367252cbc643058b2fe59689835e4268ef09b047a91f34196b1de01bfe32593e98c877126d0b1111ad60c6fe389eb5ee4de18
+  checksum: 0ea0242f0d105944bd2fb2f3f3f028b6db24fa28e9e178057d8c35925bbc8504384ab34be6d4cd758fad6e3269951b7a97a3755350ab44f676df111d0e78c7c7
   languageName: node
   linkType: hard
 
@@ -25022,7 +25023,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:web"
   dependencies:
-    "@authing/react-ui-components": ^3.1.13
+    "@authing/react-ui-components": 3.1.39
     "@redwoodjs/forms": ^1.5.1
     "@redwoodjs/router": ^1.5.1
     "@redwoodjs/web": ^1.5.1
