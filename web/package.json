@@ -19,7 +19,7 @@
     "@redwoodjs/web": "^1.5.1",
     "@sentry/react": "^6.19.7",
     "@sentry/tracing": "^6.19.7",
-    "antd-mobile": "^5.12.2",
+    "antd-mobile": "5.24.0",
     "logrocket": "^3.0.0",
     "mobx": "^6.5.0",
     "mobx-react-lite": "^3.4.0",
