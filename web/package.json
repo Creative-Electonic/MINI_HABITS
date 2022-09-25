@@ -21,7 +21,7 @@
     "@sentry/tracing": "^6.19.7",
     "antd-mobile": "^5.12.2",
     "logrocket": "^3.0.0",
-    "mobx": "^6.5.0",
+    "mobx": "6.6.2",
     "mobx-react-lite": "^3.4.0",
     "open-color": "^1.9.1",
     "prop-types": "15.8.1",

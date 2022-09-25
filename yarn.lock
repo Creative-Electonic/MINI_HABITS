@@ -17867,10 +17867,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mobx@npm:^6.5.0":
-  version: 6.5.0
-  resolution: "mobx@npm:6.5.0"
-  checksum: 25ead5caba85018b710bd7acd34c1532a082f0f692b921c6aadd5cc599d28107f238b8bcac37a1357a510a6f253f98823bfde950fd706be4da097cdf376e8b0f
+"mobx@npm:6.6.2":
+  version: 6.6.2
+  resolution: "mobx@npm:6.6.2"
+  checksum: 99f5451c92f4b2092118ee3ae2f3ac61c199cda2266a910949f5dcae217400759f79598b2ec0c5e9be1eaa3efb09dafc944ed21435e9bb0029d48ec039e0c8f3
   languageName: node
   linkType: hard
 
@@ -25030,7 +25030,7 @@ __metadata:
     "@sentry/tracing": ^6.19.7
     antd-mobile: ^5.12.2
     logrocket: ^3.0.0
-    mobx: ^6.5.0
+    mobx: 6.6.2
     mobx-react-lite: ^3.4.0
     open-color: ^1.9.1
     prop-types: 15.8.1
