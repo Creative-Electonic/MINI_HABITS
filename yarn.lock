@@ -17093,9 +17093,9 @@ __metadata:
   linkType: hard
 
 "logrocket@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "logrocket@npm:3.0.0"
-  checksum: 356e3275221fafd87906b72fe1cf3f050e33a149edeb43379ba82cb95b5042e09e26a1ef3937bfc79e2eb9acdca41abf7373220c64b2b9c25af482d46d26612a
+  version: 3.0.1
+  resolution: "logrocket@npm:3.0.1"
+  checksum: 83ebb0083355e2f1736be72c55462beb9a2a5cce066cc9a32c8f4d9f24c092b835ec092b9d5aa91fe351468fb77ca6708bd0e4e946954c6deca8d1a052a886ed
   languageName: node
   linkType: hard
 
