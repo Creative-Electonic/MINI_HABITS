@@ -17853,8 +17853,8 @@ __metadata:
   linkType: hard
 
 "mobx-react-lite@npm:^3.4.0":
-  version: 3.4.0
-  resolution: "mobx-react-lite@npm:3.4.0"
+  version: 3.4.3
+  resolution: "mobx-react-lite@npm:3.4.3"
   peerDependencies:
     mobx: ^6.1.0
     react: ^16.8.0 || ^17 || ^18
@@ -17863,7 +17863,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: 7aa64fb8740d48de23c370385331063f0a0821a87ed7a1eb0324305e8ef2f5173806c3e5ff2bfb7696e5b80faf19de11e2d3c0b64268df21895d4eec4816e325
+  checksum: c58692751ac69b4e9fcf840c43b3aac99869b0268aa8ba06189de5737a8ad27b1d3a2ec20699554e7e5a670e6957d22e3cb0f451448491a640240d7b9e98325a
   languageName: node
   linkType: hard
 
